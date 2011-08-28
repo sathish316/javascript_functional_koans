@@ -1,5 +1,4 @@
-# Javascript Functional Koans - Functional Programming for the Rest of
-Us - Javascript edition #
+# Javascript Functional Koans - Functional Programming for the Rest of Us#
 
 This is inspired by Edgecase's [Ruby
 koans](http://github.com/edgecase/ruby_koans) and the suite is
@@ -10,12 +9,14 @@ programming concepts using Javascript. It is based on the article:
 [Functional Programming for the Rest of Us](http://www.defmacro.org/ramblings/fp.html).
 
 It uses the koans philosophy to teach the following concepts:
-* Functions as First class objects
-* Higher order functions
-* Currying
-* Lazy evaluation
-* Continuations
-* Pattern matching
+
+1. Functions as First class objects
+2. Recursion
+3. Higher order functions
+4. Currying
+5. Lazy evaluation
+6. Continuations
+7. Pattern matching
 
 The koans will stick to the original article.
 
