@@ -16,7 +16,9 @@ describe("About Functional programming", function() {
 
   describe("Iteration", function(){
     it("should/will not be possible", function(){
-
+      //each example
+      //map example
+      //reduce example
     });
   });
 
@@ -31,6 +33,10 @@ describe("About Functional programming", function() {
       };
 
       expect(reverse("RACECAR")).toEqual("RACECAR");
+    });
+
+    it("should be optimized using tail call optimization in the language", function(){
+      //howto?
     });
   });
 
