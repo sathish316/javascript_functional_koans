@@ -17,6 +17,8 @@ It uses the koans philosophy to teach the following concepts:
 5. Lazy evaluation
 6. Continuations
 7. Pattern matching
+8. Closures
+9. Monads
 
 The koans will stick to the original article.
 
