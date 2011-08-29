@@ -27,6 +27,17 @@
         expect(calculate(multiply, 5, 10)).toEqual(50);
       });
 
+      it("can be returned from other functions", function(){
+        function greeter(){
+          return function(name){
+            return "Hello " + name;
+          }
+        }
+        var hello = greeter();
+
+        expect(hello("Jack")).toEqual("Hello Jack");
+      });
+
 
     });
   });

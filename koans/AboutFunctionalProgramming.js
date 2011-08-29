@@ -3,7 +3,7 @@ describe("About Functional programming", function() {
   describe("Variables", function(){
     it("should be immutable", function(){
       // Variables are immutable in Functional languages for reasons
-      // that'll be explained. For now use only Vars namespace to
+      // that'll be explained. For now use Vars namespace to
       // get/set variables to simulate immutability in javascript
       var oldValue = 42;
       var newValue = 24;
@@ -33,10 +33,6 @@ describe("About Functional programming", function() {
       };
 
       expect(reverse("RACECAR")).toEqual("RACECAR");
-    });
-
-    it("should be optimized using tail call optimization in the language", function(){
-      //howto?
     });
   });
 

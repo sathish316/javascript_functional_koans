@@ -11,4 +11,18 @@ describe("Currying", function() {
     expect(cube(4)).toEqual(64);
   });
 
+  it("can be used to write functions that generate other functions", function(){
+    function greeter(greeting){
+      return function(name){
+        return greeting + " " + name;
+      };
+    }
+
+    var hello = greeter("Hello");
+    var goodbye = greeter("Goodbye");
+
+    expect(hello("Jack")).toEqual("Hello Jack");
+    expect(goodbye("Jack")).toEqual("Goodbye Jack");
+  });
+
 });
