@@ -16,7 +16,7 @@ describe("About Lazy evaluation", function() {
 
   it("can generate infinite sequences", function(){
     function lazyFibonacci(){
-      var a = 0;
+      var a = 1;
       var b = 1;
       return function(){
         var next = a;
@@ -26,11 +26,11 @@ describe("About Lazy evaluation", function() {
       }
     }
     var next = lazyFibonacci();
-    for(var i=1;i<10;i++){
+    for(var i=0;i<10;i++){
       next();
     }
 
-    expect(next()).toEqual(34);
+    expect(next()).toEqual(89);
   });
 
 });
