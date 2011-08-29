@@ -14,14 +14,6 @@ describe("About Functional programming", function() {
     });
   });
 
-  describe("Iteration", function(){
-    it("should/will not be possible", function(){
-      //each example
-      //map example
-      //reduce example
-    });
-  });
-
   describe("Recursion", function(){
     it("should be used to repeatedly do something", function(){
       var reverse = function (str){
@@ -35,7 +27,4 @@ describe("About Functional programming", function() {
       expect(reverse("RACECAR")).toEqual("RACECAR");
     });
   });
-
-
-
 });

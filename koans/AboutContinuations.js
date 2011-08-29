@@ -1,6 +1,6 @@
 describe("About Continuations", function() {
 
-  it("In lazy evaluation functions are not evaluated in order", function() {
+  it("can avoid the problem of lazy evaluated functions not executed in order", function() {
     var value = 10;
     var doubleIt = function(x) { value = 2 * value };
     var squareIt = function(x) { value = value * value };
