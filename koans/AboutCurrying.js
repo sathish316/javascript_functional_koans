@@ -7,8 +7,8 @@ describe("Currying", function() {
     var square =  curry(power, 2);
     var cube = curry(power, 3);
 
-    expect(square(4)).toEqual(16);
-    expect(cube(4)).toEqual(64);
+    expect(square(4)).toEqual(FILL_ME_IN);
+    expect(cube(4)).toEqual(FILL_ME_IN);
   });
 
   it("can be used to write functions that generate other functions", function(){
@@ -21,8 +21,8 @@ describe("Currying", function() {
     var hello = greeter("Hello");
     var goodbye = greeter("Goodbye");
 
-    expect(hello("Jack")).toEqual("Hello Jack");
-    expect(goodbye("Jack")).toEqual("Goodbye Jack");
+    expect(hello("Jack")).toEqual(FILL_ME_IN);
+    expect(goodbye("Jack")).toEqual(FILL_ME_IN);
   });
 
 });

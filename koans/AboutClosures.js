@@ -8,7 +8,7 @@ describe("About Closures", function() {
     }
 
     var cube = makePowerFn(3);
-    expect(cube(5)).toEqual(125);
+    expect(cube(5)).toEqual(FILL_ME_IN);
   });
 
   it("can store local variables in heap instead of stack to be accessed outside of normal scope", function(){
@@ -24,8 +24,8 @@ describe("About Closures", function() {
 
     counter1();
     counter1();
-    expect(counter1()).toEqual(3);
-    expect(counter2()).toEqual(1);
+    expect(counter1()).toEqual(FILL_ME_IN);
+    expect(counter2()).toEqual(FILL_ME_IN);
   });
 
 });

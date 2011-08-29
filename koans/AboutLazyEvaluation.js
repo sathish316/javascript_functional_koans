@@ -11,7 +11,7 @@ describe("About Lazy evaluation", function() {
       answer = -42;
     });
 
-    expect(answer).toBe(42);
+    expect(answer).toBe(FILL_ME_IN);
   });
 
   it("can generate infinite sequences", function(){
@@ -30,7 +30,7 @@ describe("About Lazy evaluation", function() {
       next();
     }
 
-    expect(next()).toEqual(89);
+    expect(next()).toEqual(FILL_ME_IN);
   });
 
 });

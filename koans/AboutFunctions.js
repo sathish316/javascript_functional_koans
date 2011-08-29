@@ -13,7 +13,7 @@
         var multiply = function(a, b){
           return a * b;
         }
-        expect(multiply(2,3)).toEqual(6);
+        expect(multiply(2,3)).toEqual(FILL_ME_IN);
       });
 
       it("can be passed as argument to another function", function(){
@@ -23,8 +23,8 @@
         var add = function(a, b){ return a + b}
         var multiply = function(a, b) { return a * b}
 
-        expect(calculate(add, 5, 10)).toEqual(15);
-        expect(calculate(multiply, 5, 10)).toEqual(50);
+        expect(calculate(add, 5, 10)).toEqual(FILL_ME_IN);
+        expect(calculate(multiply, 5, 10)).toEqual(FILL_ME_IN);
       });
 
       it("can be returned from other functions", function(){
@@ -35,7 +35,7 @@
         }
         var hello = greeter();
 
-        expect(hello("Jack")).toEqual("Hello Jack");
+        expect(hello("Jack")).toEqual(FILL_ME_IN);
       });
 
 

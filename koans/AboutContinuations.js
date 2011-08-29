@@ -11,7 +11,7 @@ describe("About Continuations", function() {
     }
 
     execute(doubleIt, squareIt);
-    expect(value).toEqual(200);
+    expect(value).toEqual(FILL_ME_IN);
   });
 
   it("can execute functions in order", function(){
@@ -20,7 +20,7 @@ describe("About Continuations", function() {
 
     var value = continuation(doubleIt, 10, squareIt);
 
-    expect(value).toEqual(400);
+    expect(value).toEqual(FILL_ME_IN);
   });
 
 });

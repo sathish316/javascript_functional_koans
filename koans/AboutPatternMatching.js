@@ -9,10 +9,10 @@ describe("About Pattern Matching", function() {
       }]
     ]);
 
-    expect(fib(0)).toEqual(1);
-    expect(fib(1)).toEqual(1);
-    expect(fib(2)).toEqual(2);
-    expect(fib(10)).toEqual(89);
+    expect(fib(0)).toEqual(FILL_ME_IN);
+    expect(fib(1)).toEqual(FILL_ME_IN);
+    expect(fib(2)).toEqual(FILL_ME_IN);
+    expect(fib(10)).toEqual(FILL_ME_IN);
   });
 
 });
