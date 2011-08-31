@@ -21,19 +21,19 @@ describe("About Monads", function() {
   describe("Composing functions", function(){
     it("can be composed by nesting functions", function(){
       var sineCubed = cube(sine(Math.PI/6));
-      expect(sineCubed.toPrecision(3)).toEqual('0.125');
+      expect(sineCubed.toPrecision(3)).toEqual(FILL_ME_IN);
     });
 
     it("can use compose function for composing functions having same signature", function(){
       var sineCubed = compose(cube, sine);
-      expect(sineCubed(Math.PI/6).toPrecision(3)).toEqual('0.125');
+      expect(sineCubed(Math.PI/6).toPrecision(3)).toEqual(FILL_ME_IN);
     });
 
     it("cannot compose functions if the signatures dont match", function(){
       var sineCubed = compose(cubeDebug, sineDebug);
 
       var value = sineCubed(Math.PI/6)[0];
-      expect(isNaN(value)).toBe(true);
+      expect(isNaN(value)).toBe(FILL_ME_IN);
     });
 
     var composeDebuggable = function(f, g){
@@ -52,8 +52,8 @@ describe("About Monads", function() {
       var sineCubed = composeDebuggable(cubeDebug, sineDebug);
       var valueWithDebug = sineCubed(Math.PI/6);
 
-      expect(valueWithDebug[0].toPrecision(3)).toEqual('0.125');
-      expect(valueWithDebug[1]).toEqual("sine was called.cube was called.");
+      expect(valueWithDebug[0].toPrecision(3)).toEqual(FILL_ME_IN);
+      expect(valueWithDebug[1]).toEqual(FILL_ME_IN);
     });
   })
 
@@ -76,8 +76,8 @@ describe("About Monads", function() {
         var f = compose(bind(cubeDebug), bind(sineDebug));
         var result = f([Math.PI/6, '']);
 
-        expect(result[0].toPrecision(3)).toEqual('0.125')
-        expect(result[1]).toEqual("sine was called.cube was called.")
+        expect(result[0].toPrecision(3)).toEqual(FILL_ME_IN)
+        expect(result[1]).toEqual(FILL_ME_IN)
       });
     });
 
@@ -91,8 +91,8 @@ describe("About Monads", function() {
         var f = compose(bind(cubeDebug), bind(sineDebug));
         var result = compose(f, unit)(Math.PI/6);
 
-        expect(result[0].toPrecision(3)).toEqual('0.125')
-        expect(result[1]).toEqual("sine was called.cube was called.")
+        expect(result[0].toPrecision(3)).toEqual(FILL_ME_IN)
+        expect(result[1]).toEqual(FILL_ME_IN)
       });
 
       it("can convert any function into a debuggable one", function(){
@@ -100,8 +100,8 @@ describe("About Monads", function() {
         var roundDebug = function(x){ return unit(round(x)) };
 
         var result = roundDebug(5.5);
-        expect(result[0]).toEqual(6);
-        expect(result[1]).toEqual('');
+        expect(result[0]).toEqual(FILL_ME_IN);
+        expect(result[1]).toEqual(FILL_ME_IN);
       });
     });
 
@@ -116,8 +116,8 @@ describe("About Monads", function() {
         var roundDebug = lift(round);
 
         var result = roundDebug(5.5);
-        expect(result[0]).toEqual(6);
-        expect(result[1]).toEqual('');
+        expect(result[0]).toEqual(FILL_ME_IN);
+        expect(result[1]).toEqual(FILL_ME_IN);
 
       });
     });
@@ -132,8 +132,8 @@ describe("About Monads", function() {
       var x = '1.5';
       var result = asinOfSin(x);
 
-      expect(result[0].toPrecision(2)).toEqual(x);
-      expect(result[1]).toEqual('sin was called.asin was called.')
+      expect(result[0].toPrecision(2)).toEqual(FILL_ME_IN);
+      expect(result[1]).toEqual(FILL_ME_IN)
     });
 
   });
@@ -160,7 +160,7 @@ describe("About Monads", function() {
 
 		it("should find the children of species", function(){
       var mammals = animalTree['vertebrates']['mammals'];
-      expect(children(mammals)).toEqual(['Monkey', 'Man'])
+      expect(children(mammals)).toEqual(FILL_ME_IN)
     });
 
     // Object -> [Object]
@@ -174,13 +174,13 @@ describe("About Monads", function() {
     }
 
     it("should find the grandchildren of species", function(){
-      expect(grandchildren(animalTree['vertebrates'])).toEqual(['Salmon', 'Snake', 'Monkey', 'Man']);
+      expect(grandchildren(animalTree['vertebrates'])).toEqual(FILL_ME_IN);
     });
 
     it("cannot find the grandchildren of species by direct composition", function(){
       // children is not symmetric and is not composable
       var grandchildren = compose(children, children);
-      expect(grandchildren(animalTree['vertebrates'])).toNotEqual(['Salmon', 'Snake', 'Monkey', 'Man']);
+      expect(grandchildren(animalTree['vertebrates'])).toEqual(FILL_ME_IN);
     });
 
     it("can use bind and unit to compose children to take an Object or List", function(){
@@ -206,7 +206,7 @@ describe("About Monads", function() {
       var vertebrates = animalTree['vertebrates'];
       var result = grandchildren(vertebrates);
 
-      expect(result).toEqual(['Salmon', 'Snake', 'Monkey', 'Man']);
+      expect(result).toEqual(FILL_ME_IN);
     })
 	})
 });
