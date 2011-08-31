@@ -5,8 +5,11 @@ koans](http://github.com/edgecase/ruby_koans) and the suite is
 forked from [Javascript koans](https://github.com/mrdavidlaing/javascript-koans)
 
 The goal of Javascript functional koans is to teach basic functional
-programming concepts using Javascript. It is based on the article:
-[Functional Programming for the Rest of Us](http://www.defmacro.org/ramblings/fp.html).
+programming concepts using Javascript.
+
+It is based on the following articles:
+1. [Functional Programming for the Rest of Us](http://www.defmacro.org/ramblings/fp.html).
+2. [Best introductions to Monad i've ever read (Haskell to Javascript)](http://blog.jcoglan.com/2011/03/05/translation-from-haskell-to-javascript-of-selected-portions-of-the-best-introduction-to-monads-ive-ever-read/)
 
 It uses the koans philosophy to teach the following concepts:
 
