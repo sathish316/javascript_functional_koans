@@ -140,14 +140,14 @@ describe("About Monads", function() {
 
   describe("List Monad", function(){
 
-		var animalTree = {
+    var animalTree = {
       vertebrates: {
         fish: {salmon: 'Salmon'},
         reptiles: {snake: 'Snake'},
         mammals: {monkey: 'Monkey', man: 'Man'}
       },
       invertebrates: {}
-		}
+    }
 
     // Object -> [Object]
     function children(object){
@@ -158,7 +158,7 @@ describe("About Monads", function() {
       return ary;
     }
 
-		it("should find the children of species", function(){
+    it("should find the children of species", function(){
       var mammals = animalTree['vertebrates']['mammals'];
       expect(children(mammals)).toEqual(['Monkey', 'Man'])
     });
@@ -208,5 +208,5 @@ describe("About Monads", function() {
 
       expect(result).toEqual(['Salmon', 'Snake', 'Monkey', 'Man']);
     })
-	})
+  })
 });
