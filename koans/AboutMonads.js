@@ -138,4 +138,75 @@ describe("About Monads", function() {
 
   });
 
+  describe("List Monad", function(){
+
+		var animalTree = {
+      vertebrates: {
+        fish: {salmon: 'Salmon'},
+        reptiles: {snake: 'Snake'},
+        mammals: {monkey: 'Monkey', man: 'Man'}
+      },
+      invertebrates: {}
+		}
+
+    // Object -> [Object]
+    function children(object){
+      var ary = [];
+      for(var key in object){
+        ary.push(object[key]);
+      }
+      return ary;
+    }
+
+		it("should find the children of species", function(){
+      var mammals = animalTree['vertebrates']['mammals'];
+      expect(children(mammals)).toEqual(['Monkey', 'Man'])
+    });
+
+    // Object -> [Object]
+    function grandchildren(node){
+      var output = [];
+      var childs = children(node);
+      for(var i = 0; i < childs.length; i++){
+        output = output.concat(children(childs[i]));
+      }
+      return output;
+    }
+
+    it("should find the grandchildren of species", function(){
+      expect(grandchildren(animalTree['vertebrates'])).toEqual(['Salmon', 'Snake', 'Monkey', 'Man']);
+    });
+
+    it("cannot find the grandchildren of species by direct composition", function(){
+      // children is not symmetric and is not composable
+      var grandchildren = compose(children, children);
+      expect(grandchildren(animalTree['vertebrates'])).toNotEqual(['Salmon', 'Snake', 'Monkey', 'Man']);
+    });
+
+    it("can use bind and unit to compose children to take an Object or List", function(){
+      // a -> [a]
+      var unit = function(x) { return [x] };
+
+      // (a -> [a]) -> ([a] -> [a])
+      var bind = function(f){
+        return function(list){
+          var output = [];
+          for(var i = 0; i < list.length; i++){
+            output = output.concat(f(list[i]));
+          }
+          return output;
+        }
+      }
+
+      // [Object] -> [Object]
+      var grandchildren = compose(bind(children), bind(children));
+      // Object -> [Object]
+      grandchildren = compose(compose(bind(children), bind(children)), unit);
+
+      var vertebrates = animalTree['vertebrates'];
+      var result = grandchildren(vertebrates);
+
+      expect(result).toEqual(['Salmon', 'Snake', 'Monkey', 'Man']);
+    })
+	})
 });
