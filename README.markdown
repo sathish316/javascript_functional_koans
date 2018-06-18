@@ -31,7 +31,7 @@ The koans will stick to the original article.
 Navigate to the Javascript functional Koans folder using a file browser, and
 double click on KoansRunnner.html.
 
-The test runner used is [Jasmine](http://pivotal.github.com/jasmine/) with a
+The test runner used is [Jasmine](https://jasmine.github.io/) with a
 customized report viewer from Javascript koans by mrdavidlaing
 
 ##### License
